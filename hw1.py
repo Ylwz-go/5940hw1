@@ -70,7 +70,7 @@ if question and uploaded_files:
     
     # Split documents into chunks
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=50,
+        chunk_size=300,
         chunk_overlap=0
     )
     chunks = text_splitter.split_documents(all_documents)
@@ -118,7 +118,7 @@ if question and uploaded_files:
     prompt = hub.pull("rlm/rag-prompt")
 
     #retrieval
-    retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 3})
+    retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 5})
     
 
     def format_docs(docs):

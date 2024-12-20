@@ -118,7 +118,7 @@ if question and uploaded_files:
     prompt = hub.pull("rlm/rag-prompt")
 
     #retrieval
-    retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 2})
+    retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 3})
     
 
     def format_docs(docs):
